@@ -30,8 +30,8 @@ jobs:
       - name: Docker - Login
         uses: docker/login-action@v2
         with:
-          username: ${{ secrets.DOCKER_HUB_USERNAME }}
-          password: ${{ secrets.DOCKER_HUB_TOKEN }}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Docker - Build and push
         uses: docker/build-push-action@v3
         with:
@@ -39,7 +39,7 @@ jobs:
           file: package/docker/Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: bahmni/clinic-config:${{env.ARTIFACT_VERSION}},bahmni/clinic-config:latest
+          tags: horaira/clinic-config:${{env.ARTIFACT_VERSION}},horaira/clinic-config:latest
       - name: Push Translations to Transifex
         run: |
           bash .github/scripts/transifex.sh
