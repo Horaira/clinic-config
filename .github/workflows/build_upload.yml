@@ -39,6 +39,11 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: indiclinic/clinic-config:latest
+      # - name: Push Translations to Transifex
+      #   run: |
+      #     bash .github/scripts/transifex.sh
+      #   env:
+      #     TX_TOKEN: ${{ secrets.TX_TOKEN }}
       # - name: Pull Bahmni Default Config Helm Chart
       #   run: |
       #     helm pull default-config --repo https://bahmni.github.io/helm-charts --devel --untar --untardir package/helm
