@@ -150,6 +150,7 @@
                 "dashboardConfig":{
                     "showDetailsButton":true,
                     "conceptNames":[
+            "Chief Complaint Record",
                         "Chief Complaint Data",
                         "History of present illness",
                         "Smoking status",
@@ -160,6 +161,7 @@
                 },
                 "expandedViewConfig":{
                     "conceptNames":[
+            "Chief Complaint Record",
                         "Chief Complaint Data",
                         "History of present illness",
                         "Smoking status",
@@ -168,9 +170,9 @@
                     ],
                     "numberOfVisits":2,
                     "showDetailsButton":true,
-                    "pivotTable":{
-                    }
-                }
+          "pivotTable": {}
+        },
+        "hideEmptyDisplayControl": true
             },
             "patientAppointments": {
                 "type": "custom",
@@ -193,10 +195,11 @@
                         "BMI Status"
                     ],
                     "showDetailsButton":true,
-                    "numberOfVisits":2
-                }
+          "numberOfVisits": 3,
+          "displayNameType": "FSN"
             },
-
+        "hideEmptyDisplayControl": true
+      },
             "forms-2.0": {
                 "type": "formsV2",
                 "displayOrder": 8,
