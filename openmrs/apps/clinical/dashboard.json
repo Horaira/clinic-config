@@ -152,7 +152,6 @@
                     "conceptNames":[
                         "Chief Complaint Data",
                         "History of present illness",
-                        "Smoking status",
                         "Consultation Images",
                         "Patient Video"
                     ],
@@ -162,7 +161,6 @@
                     "conceptNames":[
                         "Chief Complaint Data",
                         "History of present illness",
-                        "Smoking status",
                         "Consultation Images",
                         "Patient Video"
                     ],
