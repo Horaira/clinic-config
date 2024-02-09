@@ -38,7 +38,7 @@ jobs:
           file: package/docker/Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: indiclinic/clinic-config:latest
+          tags: indiclinic/clinic-config:${{env.ARTIFACT_VERSION}}, indiclinic/clinic-config:latest
       # - name: Pull Bahmni Default Config Helm Chart
       #   run: |
       #     helm pull default-config --repo https://bahmni.github.io/helm-charts --devel --untar --untardir package/helm
