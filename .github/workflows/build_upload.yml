@@ -8,6 +8,12 @@ on:
       - '[0-9]+.[0-9]+.[0-9]+'
     paths-ignore:
       - "**.md"
+  workflow_run:
+    workflows: [Pull Translations from Transifex]
+    types: [completed]
+    branches:
+      - main
+      - 'release-*'
   workflow_dispatch:
 
 jobs:
@@ -42,7 +48,10 @@ jobs:
           tags: horaira/clinic-config:${{env.ARTIFACT_VERSION}},horaira/clinic-config:latest
       - name: Push Translations to Transifex
         run: |
-          bash .github/scripts/transifex.sh
+          curl -o transifex.sh https://raw.githubusercontent.com/Bahmni/bahmni-infra-utils/main/transifex.sh
+          chmod +x transifex.sh
+          ./transifex.sh push
+          rm transifex.sh
         env:
           TX_TOKEN: ${{ secrets.TX_TOKEN }}
       - name: Pull Bahmni Default Config Helm Chart
